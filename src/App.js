@@ -1,27 +1,52 @@
-import "./App.css";
-import Navbar from "./navbar.js";
-import Post from "./post.js";
-function App() {
+import { useState } from 'react';
+
+export default function Scoreboard() {
+  const [player, setPlayer] = useState({
+    firstName: 'Ranjani',
+    lastName: 'Shettar',
+    score: 10,
+  });
+
+  function handlePlusClick() {
+    player.score++;
+  }
+
+  function handleFirstNameChange(e) {
+    setPlayer({
+      ...player,
+      firstName: e.target.value,
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPlayer({
+      lastName: e.target.value
+    });
+  }
+
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <div className="posts">
-          <Post
-            title="My First Post"
-            content="This is the content of my first post."
-          />
-          <Post
-            title="My Second Post"
-            content="This is the content of my second post."
-          />
-        </div>
-        <div className="buttons">
-          <button className="custom-button">Tag Button</button>
-        </div>
-      </div>
-    </div>
+    <>
+      <label>
+        Score: <b>{player.score}</b>
+        {' '}
+        <button onClick={handlePlusClick}>
+          +1
+        </button>
+      </label>
+      <label>
+        First name:
+        <input
+          value={player.firstName}
+          onChange={handleFirstNameChange}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={player.lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
+    </>
   );
 }
-
-export default App;
