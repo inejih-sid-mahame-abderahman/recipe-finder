@@ -7,7 +7,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.content{
+ width:900px;
+  margin:40px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap:20px;
+}
 .navbar {
  background:#0f766e;
   color:white;
@@ -15,4 +21,25 @@ code {
   padding:20px;
   font-size:24px;
   box-shadow:0 3px 5px rgba(0,0,0,0.2);
+}
+.post {
+  background:white;
+  padding:20px;
+  margin:20px auto;
+  max-width:600px;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
+  border: 10px solid #0f766e;
+}
+.custom-button {
+  background:#0f766e;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:16px;
+}
+.custom-button:hover {
+  background:#0c5a5a;
 }
