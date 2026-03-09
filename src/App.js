@@ -5,10 +5,11 @@ export default function RequestTracker() {
   const [completed, setCompleted] = useState(0);
 
   async function handleClick() {
-    setPending(pending + 1);
+  setPending(pending + 1);
     await delay(3000);
     setPending(pending - 1);
     setCompleted(completed + 1);
+
   }
 
   return (
@@ -26,8 +27,10 @@ export default function RequestTracker() {
   );
 }
 
+
 function delay(ms) {
   return new Promise(resolve => {
     setTimeout(resolve, ms);
+
   });
 }
